@@ -1,11 +1,12 @@
 ﻿using Vera.Interface.BLL;
+using Vera.Interface.DAL;
 
 namespace Vera.Business
 {
     public class UserRepository : IUserRepository
     {
-        private IUserRepository users;
-        public UserRepository(IUserRepository _users)
+        private IUserDataAccess users;
+        public UserRepository(IUserDataAccess _users)
         {
             users = _users;
         }
