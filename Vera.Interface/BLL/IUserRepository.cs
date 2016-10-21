@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vera.Interface.BLL
 {
-    interface IUserRepository
+    public interface IUserRepository
     {
+        bool Login(string username, string password);
     }
 }

@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AdoNet\SqlHelper.cs" />
     <Compile Include="AdoNet\UserDal.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
