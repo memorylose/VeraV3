@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vera.Interface
+namespace Vera.Interface.BLL
 {
-    public class Class1
+    interface IUserRepository
     {
     }
 }
