@@ -1,0 +1,286 @@
+﻿body {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    background-color: #EDEDEF;
+}
+
+.reg_err {
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.top-left {
+    height: 50px;
+    font-size: 26px;
+    line-height: 50px;
+    text-align: center;
+    color: #525252;
+}
+
+.top-right {
+    float: left;
+    width: 79%;
+    height: 50px;
+}
+
+.top-menu {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+    .top-menu a {
+        font-size: 14px;
+        font-family: 微软雅黑;
+        color: black;
+    }
+
+        .top-menu a:hover {
+            color: #D6623D;
+            text-decoration: none;
+        }
+
+.top-login {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+    margin-left: 20px;
+}
+
+    .top-login span {
+        font-size: 12px;
+        font-family: 微软雅黑;
+        color: black;
+    }
+
+    .top-login a {
+        font-size: 12px;
+        font-family: 微软雅黑;
+        color: black;
+    }
+
+        .top-login a:hover {
+            color: #D6623D;
+            text-decoration: none;
+        }
+
+.content-main {
+    background-color: white;
+    border: 1px solid #ECECEC;
+    padding-bottom: 15px;
+}
+
+.content-title {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+    .content-title a {
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+    }
+
+        .content-title a:hover {
+            color: #D6623D;
+            text-decoration: none;
+        }
+
+.content-date {
+    height: 20px;
+    color: #A2A2A2;
+    padding-left: 40px;
+    line-height: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+    .content-date span {
+        margin-right: 10px;
+    }
+
+.content-t {
+    font-size: 14px;
+    color: #656565;
+    line-height: 25px;
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+.content-detail-top {
+    height: 50px;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+
+    .content-detail-top span {
+        margin-right: 10px;
+        font-size: 13px;
+        color: black;
+    }
+
+        .content-detail-top span a {
+            color: black;
+        }
+
+            .content-detail-top span a:hover {
+                text-decoration: none;
+            }
+
+.content-detail-title {
+    height: 30px;
+    font-size: 20px;
+    color: black;
+    padding-left: 50px;
+    margin-top: 40px;
+}
+
+.content-detail-time {
+    height: 20px;
+    font-size: 12px;
+    color: black;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+    .content-detail-time a {
+        font-size: 12px;
+        color: black;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+        .content-detail-time a:hover {
+            text-decoration: none;
+        }
+
+.content-line {
+    width: 93%;
+    border-bottom: 1px solid #DDDDDD;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.content-detail-c {
+    font-size: 14px;
+    color: black;
+    padding-left: 50px;
+    margin-top: 10px;
+    line-height: 25px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    background-color: #232323;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.footer-div {
+    color: #666666;
+    font-size: 13px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.search-input {
+    height: 40px;
+    width: 250px;
+    border: 1px solid #DDDDDD;
+    padding-left: 10px;
+    float: right;
+    outline: none;
+}
+
+.title-div {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.dp {
+    border: 1px solid #DDDDDD;
+    width: 120px;
+    height: 30px;
+}
+
+.title-input {
+    height: 40px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    padding-left: 10px;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.create-btn {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: #d6623d url(/images/search.png) no-repeat 3px 3px;
+}
+
+.login-code-input {
+    width: 50%;
+    float: left;
+}
+
+.login-code-img {
+    width: 120px;
+    height: 40px;
+    float: right;
+}
+
+.right-num {
+    height: 30px;
+    width: 30px;
+    float: left;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.right-t {
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.right-con {
+    height: 30px;
+    float: left;
+    line-height: 30px;
+}
+
+    .right-con a {
+        font-size: 13px;
+        color: #656565;
+    }
+
+        .right-con a:hover {
+            text-decoration: none;
+            color: #D6623D;
+        }
+
+
+
+.test {
+    border: 1px solid red;
+}

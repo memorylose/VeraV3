@@ -85,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\demo.css" />
+    <Content Include="Styles\flat-ui.css" />
+    <Content Include="Styles\index.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\glyphicons\" />
+    <Folder Include="fonts\lato\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
