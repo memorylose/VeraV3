@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vera.Interface.DAL
 {
-    interface IUserDataAccess
+    public interface IUserDataAccess
     {
+        bool Login(string username, string password);
     }
 }
