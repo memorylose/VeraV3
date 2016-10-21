@@ -30,11 +30,6 @@
                             <input type="password" class="form-control" value="" placeholder="密码" id="txtPassword" runat="server" />
                             <label class="login-field-icon fui-lock" for="login-pass"></label>
                         </div>
-            <%--            <div class="form-group">
-                            <input type="text" class="form-control login-code-input" id="txtVerify" runat="server" placeholder="验证码" />
-                            <img id="imgVerify" src="/Verification/VerifyCode.aspx?" alt="看不清？点击更换" onclick="this.src=this.src+'?'" class="login-code-img" />
-                            <div style="clear: both;"></div>
-                        </div>--%>
                         <asp:Button ID="Button1" CssClass="btn btn-primary btn-lg btn-block" runat="server" Text="登录" OnClick="Button1_Click" />
                     </div>
                     <a class="login-link" href="#">忘记密码？</a>
