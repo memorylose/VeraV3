@@ -9,5 +9,6 @@ namespace Vera.Interface.BLL
     public interface IUserRepository
     {
         bool Login(string username, string password);
+        string ValidateLogin(string username, string password);
     }
 }

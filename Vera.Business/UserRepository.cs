@@ -15,5 +15,19 @@ namespace Vera.Business
         {
             return users.Login(username, password);
         }
+
+        public string ValidateLogin(string username, string password)
+        {
+            string errMsg = string.Empty;
+            if (string.IsNullOrEmpty(username))
+            {
+                errMsg = "用户名不能为空";
+            }
+            else if (string.IsNullOrEmpty(password))
+            {
+                errMsg = "密码不能为空";
+            }
+            return errMsg;
+        }
     }
 }
