@@ -48,6 +48,10 @@
       <Project>{ad5a4675-1221-4c5d-9441-d198c78da18b}</Project>
       <Name>Vera.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Vera.Model\Vera.Model.csproj">
+      <Project>{3b7f6606-9ee7-4d1d-90c0-62d8db3f0379}</Project>
+      <Name>Vera.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

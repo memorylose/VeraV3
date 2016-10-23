@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using Vera.Business;
-using Vera.DataAccess.AdoNet;
+using Vera.DataAccess.Dapper;
 using Vera.Interface.BLL;
 using Vera.Interface.DAL;
 
@@ -26,6 +26,7 @@ namespace Vera.UI
             var builder = new ContainerBuilder();
             builder.RegisterType<UserDal>().As<IUserDataAccess>();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<DapperConnection>().As<IDapperConnection>();
             _containerProvider = new ContainerProvider(builder.Build());
         }
     }

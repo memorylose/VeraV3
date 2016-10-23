@@ -21,21 +21,22 @@ namespace Vera.UI
 
         public void Button1_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Value;
-            string password = txtPassword.Value;
-            string validationErrors = this.userRep.ValidateLogin(username, password);
+            Vera.Model.User user = new Model.User() { UserName = txtUsername.Value, Password = txtPassword.Value };
+            string validationErrors = this.userRep.ValidateLogin(user);
 
             if (string.Equals(validationErrors, string.Empty))
             {
-                if (this.userRep.Login(username, password))
+                if (this.userRep.Login(user))
                 {
-                    Session[SessionContainer.Login] = "";
+                    int userId = this.userRep.GetUserIdByUserName(user.UserName);
+                    Session[SessionContainer.Login] = userId.ToString();
+                    Response.Redirect("Index.aspx");
                 }
                 else
                 {
                     validationErrors = "用户名密码错误";
-                    username = string.Empty;
-                    password = string.Empty;
+                    txtUsername.Value = string.Empty;
+                    txtPassword.Value = string.Empty;
                 }
             }
         }

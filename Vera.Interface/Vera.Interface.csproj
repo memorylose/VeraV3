@@ -41,8 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\IUserRepository.cs" />
+    <Compile Include="DAL\IDapperConnection.cs" />
     <Compile Include="DAL\IUserDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vera.Model\Vera.Model.csproj">
+      <Project>{3b7f6606-9ee7-4d1d-90c0-62d8db3f0379}</Project>
+      <Name>Vera.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
