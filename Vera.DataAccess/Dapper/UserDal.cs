@@ -41,5 +41,15 @@ namespace Vera.DataAccess.Dapper
                 return user.UserId;
             }
         }
+
+        public UserInformation GetUserInfoByUserId(int userId)
+        {
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                const string query = "SELECT NickName, Gender, Profession, Major FROM UserInformation WHERE UserId = @UserId";
+                var user = connection.Query<UserInformation>(query, new { UserId = userId }).SingleOrDefault();
+                return user;
+            }
+        }
     }
 }

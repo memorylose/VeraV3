@@ -35,5 +35,10 @@ namespace Vera.Business
         {
             return users.GetUserIdByUserName(userName);
         }
+
+        public UserInformation GetUserInfoByUserId(int userId)
+        {
+            return users.GetUserInfoByUserId(userId);
+        }
     }
 }

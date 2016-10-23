@@ -12,5 +12,6 @@ namespace Vera.Interface.BLL
         bool Login(User user);
         string ValidateLogin(User user);
         int GetUserIdByUserName(string userName);
+        UserInformation GetUserInfoByUserId(int userId);
     }
 }
