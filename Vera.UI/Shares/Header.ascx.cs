@@ -22,7 +22,7 @@ namespace Vera.UI.Shares
             }
             else
             {
-                username = Session["user"].ToString();
+                username = Session[SessionContainer.Login].ToString();
                 HeaderTophtml += "<div class=\"header-login\">你好，" + username + "</div>";
                 HeaderTophtml += "<div class=\"header-login\"><a href=\"../LogOut.aspx\">登出</a></div>";
             }

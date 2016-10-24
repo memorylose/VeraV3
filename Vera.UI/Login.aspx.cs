@@ -39,6 +39,7 @@ namespace Vera.UI
                     txtPassword.Value = string.Empty;
                 }
             }
+            LoginErrorMessageshtml = validationErrors;
         }
     }
 }

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dapper\ArticleDal.cs" />
     <Compile Include="Dapper\DapperConnection.cs" />
     <Compile Include="Dapper\UserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

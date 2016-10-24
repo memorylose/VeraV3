@@ -24,9 +24,18 @@ namespace Vera.UI
         protected void Application_Start(object sender, EventArgs e)
         {
             var builder = new ContainerBuilder();
+
+            //article
+            builder.RegisterType<ArticleDal>().As<IArticleDataAccess>();
+            builder.RegisterType<ArticleRepository>().As<IArticleRepository>();
+
+            //user
             builder.RegisterType<UserDal>().As<IUserDataAccess>();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
+
+            //dapper
             builder.RegisterType<DapperConnection>().As<IDapperConnection>();
+
             _containerProvider = new ContainerProvider(builder.Build());
         }
     }

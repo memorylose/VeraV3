@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\IArticleRepository.cs" />
     <Compile Include="BLL\IUserRepository.cs" />
+    <Compile Include="DAL\IArticleDataAccess.cs" />
     <Compile Include="DAL\IDapperConnection.cs" />
     <Compile Include="DAL\IUserDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
