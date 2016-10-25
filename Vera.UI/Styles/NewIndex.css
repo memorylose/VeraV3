@@ -281,17 +281,16 @@
 
 .d-title-line {
     border-bottom: 1px solid #EDEDED;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .word-detail {
-    font-size:14px;
-   line-height:30px;
-   color:#555555;
-   padding-bottom:20px;
-   padding-left:15px;
-   padding-right:15px;
-
+    font-size: 14px;
+    line-height: 30px;
+    color: #555555;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .d-title-type {
@@ -308,6 +307,48 @@
     }
 
         .d-title-type a:hover {
+            text-decoration: none;
+        }
+
+.pager-e {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    float: left;
+    font-size: 13px;
+    border-bottom: 3px solid #CC0000;
+    color: #CC0000;
+    font-family: 微软雅黑;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.pager-d {
+    text-align: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    float: left;
+    font-size: 13px;
+    border-bottom: 3px solid #ECECEC;
+    color: #666666;
+    font-family: 微软雅黑;
+    margin-right: 8px;
+}
+
+    .pager-d:hover {
+        border-bottom: 3px solid #CC0000;
+        color: #CC0000;
+    }
+
+    .pager-d a {
+        color: #666666;
+    }
+
+        .pager-d a:hover {
+            color: #CC0000;
             text-decoration: none;
         }
 
