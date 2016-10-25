@@ -11,11 +11,27 @@ namespace Vera.Model
         public int TypeId { get; set; }
         public int CreateUserId { get; set; }
         public DateTime CreateDate { get; set; }
+        public int rownumber { get; set; }
+        public string TypeName { get; set; }
+
     }
 
     public class ArticleType
     {
         public int TypeId { get; set; }
         public string TypeName { get; set; }
+    }
+
+    public class IndexType
+    {
+        public int TypeId { get; set; }
+        public string TypeName { get; set; }
+        public int TypeCount { get; set; }
+    }
+
+    public class IndexDate
+    {
+        public int DateCount { get; set; }
+        public string CrDate { get; set; }
     }
 }

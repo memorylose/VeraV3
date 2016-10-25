@@ -11,5 +11,8 @@ namespace Vera.Interface.DAL
     {
         IEnumerable<Articles> GetArticles();
         IEnumerable<Articles> GetHotArticles();
+        IEnumerable<IndexType> GetIndexArticleType();
+        IEnumerable<IndexDate> GetIndexArticleDate();
+        IEnumerable<Articles> GetIndexArticle(int beginRowNumber, int endRowNumber);
     }
 }

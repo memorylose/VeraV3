@@ -58,6 +58,24 @@ namespace Vera.UI {
         protected global::Vera.UI.Shares.UserInfo UserInfo2;
         
         /// <summary>
+        /// ArticleType1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vera.UI.Shares.ArticleType ArticleType1;
+        
+        /// <summary>
+        /// ArticleDate1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vera.UI.Shares.ArticleDate ArticleDate1;
+        
+        /// <summary>
         /// HotArticles1 control.
         /// </summary>
         /// <remarks>

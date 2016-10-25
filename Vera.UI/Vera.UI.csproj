@@ -121,6 +121,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Shares\ArticleDate.ascx" />
     <Content Include="Shares\ArticleType.ascx" />
     <Content Include="Shares\BlogName.ascx" />
     <Content Include="Shares\Footer.ascx" />
@@ -155,6 +156,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shares\ArticleDate.ascx.cs">
+      <DependentUpon>ArticleDate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shares\ArticleDate.ascx.designer.cs">
+      <DependentUpon>ArticleDate.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Shares\ArticleType.ascx.cs">
       <DependentUpon>ArticleType.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,6 +233,10 @@
     <ProjectReference Include="..\Vera.Model\Vera.Model.csproj">
       <Project>{3b7f6606-9ee7-4d1d-90c0-62d8db3f0379}</Project>
       <Name>Vera.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vera.Utility\Vera.Utility.csproj">
+      <Project>{ed63225f-49e1-4d66-b4fc-3a5cd5b741cb}</Project>
+      <Name>Vera.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

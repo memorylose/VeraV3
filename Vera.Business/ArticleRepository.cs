@@ -26,5 +26,20 @@ namespace Vera.Business
         {
             return article.GetHotArticles();
         }
+
+        public IEnumerable<IndexType> GetIndexArticleType()
+        {
+            return article.GetIndexArticleType();
+        }
+
+        public IEnumerable<IndexDate> GetIndexArticleDate()
+        {
+            return article.GetIndexArticleDate();
+        }
+
+        public IEnumerable<Articles> GetIndexArticle(int beginRowNumber, int endRowNumber)
+        {
+            return article.GetIndexArticle(beginRowNumber, endRowNumber);
+        }
     }
 }
