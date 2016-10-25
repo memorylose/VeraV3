@@ -64,8 +64,7 @@
                 <div class="col-md-9 r-content">
                     <div class="l-personal-name" style="margin-left: 20px;">欢迎来到我的生活坊</div>
                     <%=ArticleListhtml %>
-                    <div class="r-content-d test" style="">
-                        <%--<a class="pager test">1</a>--%>
+                    <div class="r-content-d" style="padding-left:20px;padding-bottom:20px; padding-top:20px;">
                         <div class="pager-e">1</div>
                         <div class="pager-d"><a href="">2</a></div>
                         <div class="pager-d"><a href="">3</a></div>
@@ -73,9 +72,6 @@
                         <div class="pager-d"><a href="">下一页</a></div>
                         <div style="clear: both;"></div>
                     </div>
-                   
-
- <div style="clear:both;"></div>
                     <%-- <%=PageDevisionhtml %>--%>
                 </div>
             </div>
