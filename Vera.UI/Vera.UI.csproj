@@ -216,6 +216,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Pager\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Vera.Business\Vera.Business.csproj">
