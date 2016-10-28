@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Vera.UI.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Articles.aspx.cs" Inherits="Vera.UI.Articles" %>
 
 <%@ Register Src="Shares/Header.ascx" TagName="Header" TagPrefix="uc1" %>
 <%@ Register Src="Shares/HeaderSignature.ascx" TagName="HeaderSignature" TagPrefix="uc2" %>
@@ -10,18 +10,20 @@
 <%@ Register Src="Shares/ArticleDate.ascx" TagName="ArticleDate" TagPrefix="uc8" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>薇拉生活坊</title>
-    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
-    <link href="Styles/NewIndex.css" rel="stylesheet" />
+    <title>文章详细页</title>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/styles/NewIndex.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="header">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 header-col"></div>
+                    <div class="col-md-2 header-col">
+                    </div>
                     <div class="col-md-8 header-col"></div>
                     <div class="col-md-2 header-col">
                         <uc1:Header ID="Header1" runat="server" />
@@ -34,7 +36,9 @@
                 <uc3:BlogName ID="BlogName1" runat="server" />
             </div>
             <div class="row header-word">
-                <uc2:HeaderSignature ID="HeaderSignature1" runat="server" />
+                <div class="header-word-detail">
+                    <uc2:HeaderSignature ID="HeaderSignature1" runat="server" />
+                </div>
             </div>
         </div>
         <div class="container">
@@ -50,6 +54,7 @@
                     <div class="l-personal-name">文章分类</div>
                     <div class="l-personal-detail">
                         <uc7:ArticleType ID="ArticleType1" runat="server" />
+
                     </div>
                     <div class="l-personal-name">文章存档</div>
                     <div class="l-personal-detail">
@@ -62,17 +67,18 @@
                 </div>
                 <div class="col-md-9 r-content">
                     <div class="l-personal-name" style="margin-left: 20px;">欢迎来到我的生活坊</div>
-                    <%=ArticleListhtml %>
-                    <div class="r-content-d" style="padding-left: 20px; padding-bottom: 20px; padding-top: 20px;">
-                      <%--       <div class="pager-e">1</div>
-                        <div class="pager-d"><a href="">2</a></div>
-                        <div class="pager-d"><a href="">3</a></div>
-                        <div class="pager-d"><a href="">4</a></div>
-                        <div class="pager-d"><a href="">下一页</a></div>
-                        <div style="clear: both;"></div>--%>
-                        <%=strPager %>
+                    <div class="r-content-d">
+                        <div class="d-title"><%=Title %></div>
+                        <div class="d-title-line">
+                            <div class="d-title-type">收藏</div>
+                            <div class="d-title-type"><%=CrDate %></div>
+                            <div class="d-title-type"><a href=""><%=TypeName %></a></div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="word-detail">
+                            <%=Contents %>
+                        </div>
                     </div>
-                    <%-- <%=PageDevisionhtml %>--%>
                 </div>
             </div>
         </div>

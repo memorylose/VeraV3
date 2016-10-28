@@ -64,5 +64,25 @@ namespace Vera.DataAccess.Dapper
                 return articles;
             }
         }
+
+        public int GetArticlesCount()
+        {
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                const string query = "SELECT ArticleId FROM Articles";
+                var articles = connection.Query<Articles>(query).Count();
+                return articles;
+            }
+        }
+
+        public Articles GetArticleDetail(int articleId)
+        {
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                const string query = "select Articles.ArticleId,Articles.Title,Articles.Contents,Articles.CreateDate,Articles.TypeId,ArticleType.TypeName,Users.UserName from Articles, ArticleType, Users where Articles.TypeId = ArticleType.TypeId and Articles.CreateUserId = Users.UserId and Articles.ArticleId=@articleId";
+                var articles = connection.Query<Articles>(query, new { articleId = articleId }).FirstOrDefault();
+                return articles;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Vera.Model
         public DateTime CreateDate { get; set; }
         public int rownumber { get; set; }
         public string TypeName { get; set; }
-
+        public string UserName { get; set; }
     }
 
     public class ArticleType

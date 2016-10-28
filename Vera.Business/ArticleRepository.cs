@@ -41,5 +41,15 @@ namespace Vera.Business
         {
             return article.GetIndexArticle(beginRowNumber, endRowNumber);
         }
+
+        public int GetArticlesCount()
+        {
+            return article.GetArticlesCount();
+        }
+
+        public Articles GetArticleDetail(int articleId)
+        {
+            return article.GetArticleDetail(articleId);
+        }
     }
 }
