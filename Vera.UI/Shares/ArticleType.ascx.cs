@@ -19,7 +19,7 @@ namespace Vera.UI.Shares
             foreach (var list in articleList)
             {
                 ArticleTypeHtml += "<div class=\"row bt-margin\">";
-                ArticleTypeHtml += "<div class=\"l-cate-name\"><a href=\"Index.aspx?id=" + list.TypeId + "\">" + list.TypeName + "</a></div>";
+                ArticleTypeHtml += "<div class=\"l-cate-name\"><a href=\"/home/type/" + list.TypeId + "\">" + list.TypeName + "</a></div>";
                 ArticleTypeHtml += "<div class=\"l-cate-name-d\">(" + list.TypeCount + ")</div>";
                 ArticleTypeHtml += "</div>";
             }

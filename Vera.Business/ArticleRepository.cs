@@ -51,5 +51,15 @@ namespace Vera.Business
         {
             return article.GetArticleDetail(articleId);
         }
+
+        public IEnumerable<Articles> GetIndexArticleWithType(int beginRowNumber, int endRowNumber, int typeId)
+        {
+            return article.GetIndexArticleWithType(beginRowNumber, endRowNumber, typeId);
+        }
+
+        public int GetArticlesCountWithType(int typeId)
+        {
+            return article.GetArticlesCountWithType(typeId);
+        }
     }
 }

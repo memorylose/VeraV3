@@ -65,11 +65,42 @@ namespace Vera.DataAccess.Dapper
             }
         }
 
+        public IEnumerable<Articles> GetIndexArticleWithType(int beginRowNumber, int endRowNumber, int typeId)
+        {
+            string typeStr = string.Empty;
+            if (typeId != 0)
+            {
+                typeStr = " and Articles.TypeId = " + typeId;
+            }
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                string query = "select A.* from (select row_number() over(order by Articles.CreateDate desc) as rownumber, Articles.ArticleId,Articles.Title,Articles.Summary,Articles.Contents,Articles.CreateDate,Articles.TypeId, ArticleType.TypeName, Users.UserName from Articles inner join Users on Articles.CreateUserId = Users.UserId inner join ArticleType on Articles.TypeId = ArticleType.TypeId "+ typeStr + ") as A where A.rownumber between @beginRowNumber and @endRowNumber";
+                var articles = connection.Query<Articles>(query, new { beginRowNumber = beginRowNumber, endRowNumber = endRowNumber }).ToList();
+                return articles;
+            }
+        }
+
         public int GetArticlesCount()
         {
             using (IDbConnection connection = dapperConnection.OpenConnection())
             {
                 const string query = "SELECT ArticleId FROM Articles";
+                var articles = connection.Query<Articles>(query).Count();
+                return articles;
+            }
+        }
+
+        public int GetArticlesCountWithType(int typeId)
+        {
+            string typeStr = string.Empty;
+            if (typeId != 0)
+            {
+                typeStr = " and TypeId = " + typeId;
+            }
+
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                string query = "SELECT ArticleId FROM Articles WHERE 1 = 1" + typeStr;
                 var articles = connection.Query<Articles>(query).Count();
                 return articles;
             }

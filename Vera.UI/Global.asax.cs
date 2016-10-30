@@ -54,6 +54,14 @@ namespace Vera.UI
                 "~/index.aspx");
 
             routes.MapPageRoute("",
+                "home/type/{typeid}",
+                "~/index.aspx");
+
+            routes.MapPageRoute("",
+             "home/type/{typeid}/{curTypePage}",
+             "~/index.aspx");
+
+            routes.MapPageRoute("",
                 "article/{id}",
                 "~/articles.aspx");
         }

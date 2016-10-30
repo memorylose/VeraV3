@@ -19,27 +19,45 @@ namespace Vera.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Pager.Pager pager = new Pager.Pager();
             int curPage = 0;
+            int typeid = 0;
 
             if (Page.RouteData.Values["pageid"] != null)
             {
                 curPage = Convert.ToInt32(Page.RouteData.Values["pageid"]);
             }
 
+            if (Page.RouteData.Values["typeid"] != null)
+            {
+                typeid = Convert.ToInt32(Page.RouteData.Values["typeid"]);
+            }
+
+            if (Page.RouteData.Values["curTypePage"] != null)
+            {
+                curPage = Convert.ToInt32(Page.RouteData.Values["curTypePage"]);
+            }
+
+
             int startPage = 0;
             int endPage = 0;
-            int totalCount = articleRep.GetArticlesCount();
-            int pageSize = 5;
+            int totalCount = articleRep.GetArticlesCountWithType(typeid);
+            int pageSize = 10;
+
 
             string redirectPage = "/home/";
+            if (Page.RouteData.Values["typeid"] != null)
+            {
+                redirectPage = "/home/type/" + typeid + "/";
+            }
+
             string enableClass = "pager-e";
             string disableClass = "pager-d";
             bool isClearBoth = true;
 
+            Pager.Pager pager = new Pager.Pager();
             strPager = pager.GetPager(totalCount, pageSize, curPage, redirectPage, enableClass, disableClass, isClearBoth, ref startPage, ref endPage);
 
-            var articleList = articleRep.GetIndexArticle(startPage, endPage);
+            var articleList = articleRep.GetIndexArticleWithType(startPage, endPage, typeid);
             int userId = 0;
             bool isSign = false;
             if (Session[SessionContainer.Login] != null)
