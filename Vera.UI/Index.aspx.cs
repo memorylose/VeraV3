@@ -21,23 +21,23 @@ namespace Vera.UI
         {
             Pager.Pager pager = new Pager.Pager();
             int curPage = 0;
-            if (Request.QueryString["page"] != null)
+
+            if (Page.RouteData.Values["pageid"] != null)
             {
-                curPage = Convert.ToInt32(Request.QueryString["page"]);
+                curPage = Convert.ToInt32(Page.RouteData.Values["pageid"]);
             }
 
             int startPage = 0;
             int endPage = 0;
             int totalCount = articleRep.GetArticlesCount();
             int pageSize = 5;
-            string pageQuerystringName = "page";
-            string redirectPage = "Index.aspx";
-            string redirectSign = "?";
+
+            string redirectPage = "/home/";
             string enableClass = "pager-e";
             string disableClass = "pager-d";
             bool isClearBoth = true;
 
-            strPager = pager.GetPager(totalCount, pageSize, curPage, pageQuerystringName, redirectPage, redirectSign, enableClass, disableClass, isClearBoth, ref startPage, ref endPage);
+            strPager = pager.GetPager(totalCount, pageSize, curPage, redirectPage, enableClass, disableClass, isClearBoth, ref startPage, ref endPage);
 
             var articleList = articleRep.GetIndexArticle(startPage, endPage);
             int userId = 0;
@@ -62,7 +62,7 @@ namespace Vera.UI
                 ArticleListhtml.Append("</div>");
                 ArticleListhtml.Append("</div>");
                 ArticleListhtml.Append("<div class=\"col-md-10 bt-padding\">");
-                ArticleListhtml.Append("<div class=\"r-title\"><a href=\"Articles.aspx?id=" + list.ArticleId + "\">" + list.Title + "</a></div>");
+                ArticleListhtml.Append("<div class=\"r-title\"><a href=\"/article/" + list.ArticleId + "\">" + list.Title + "</a></div>");
                 ArticleListhtml.Append("<div class=\"r-time-1\"><a href=\"Index.aspx?id=" + list.TypeId + "\">" + list.TypeName + "</a></div>");
                 if (isSign)
                 {

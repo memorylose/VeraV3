@@ -18,7 +18,15 @@ namespace Vera.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetArticleDetail(Convert.ToInt32(Request.QueryString["id"]));
+
+            if (Page.RouteData.Values["id"] != null)
+            {
+                GetArticleDetail(Convert.ToInt32(Page.RouteData.Values["id"]));
+            }
+            else
+            {
+                Response.Redirect("Home");
+            }
         }
 
         private void GetArticleDetail(int articleId)

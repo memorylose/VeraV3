@@ -13,7 +13,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>文章详细页</title>
+    <title><%=Title %></title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet" />
     <link href="/styles/NewIndex.css" rel="stylesheet" />
 </head>

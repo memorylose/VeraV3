@@ -12,7 +12,7 @@ namespace Vera.UI.Shares
         public string BlogNameHtml = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            BlogNameHtml += "<a href=\"Index.aspx\"><img src=\"/images/logo.png\" class=\"header-img \"/></a>";
+            BlogNameHtml += "<a href=\"/Home\"><img src=\"/images/logo.png\" class=\"header-img \"/></a>";
         }
     }
 }

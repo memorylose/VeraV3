@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using Vera.Business;
@@ -37,6 +38,24 @@ namespace Vera.UI
             builder.RegisterType<DapperConnection>().As<IDapperConnection>();
 
             _containerProvider = new ContainerProvider(builder.Build());
+
+            //add route
+            RegisterRoutes(RouteTable.Routes);
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.MapPageRoute("",
+                "home",
+                "~/index.aspx");
+
+            routes.MapPageRoute("",
+                "home/{pageid}",
+                "~/index.aspx");
+
+            routes.MapPageRoute("",
+                "article/{id}",
+                "~/articles.aspx");
         }
     }
 }

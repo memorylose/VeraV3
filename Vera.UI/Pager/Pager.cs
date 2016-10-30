@@ -8,7 +8,7 @@ namespace Vera.UI.Pager
 {
     public class Pager
     {
-        public string GetPager(int totalCount, int pageSize, int currentPage, string pageQuerystringName, string redirectPage, string redirectSign, string enableClass, string disableClass, bool isClearBoth, ref int startPage, ref int endPage)
+        public string GetPager(int totalCount, int pageSize, int currentPage, string redirectPage, string enableClass, string disableClass, bool isClearBoth, ref int startPage, ref int endPage)
         {
             if (currentPage == 0)
             {
@@ -38,7 +38,7 @@ namespace Vera.UI.Pager
                     }
                     else
                     {
-                        strBuilder.Append("<div class=\"" + disableClass + "\"><a href=\"" + redirectPage + "" + redirectSign + "" + pageQuerystringName + "=" + i + "\">" + i + "</a></div>");
+                        strBuilder.Append("<div class=\"" + disableClass + "\"><a href=\"" + redirectPage + "" + i + "\">" + i + "</a></div>");
                     }
                 }
             }
