@@ -12,5 +12,6 @@ namespace Vera.Interface.DAL
         bool Login(User userModel);
         int GetUserIdByUserName(string userName);
         UserInformation GetUserInfoByUserId(int userId);
+        User GetUserByUserId(int userId);
     }
 }

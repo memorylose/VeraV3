@@ -51,5 +51,15 @@ namespace Vera.DataAccess.Dapper
                 return user;
             }
         }
+
+        public User GetUserByUserId(int userId)
+        {
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                const string query = "SELECT UserId, UserName, Email, CreateDate,UpdateDate,Password FROM Users WHERE UserId = @UserId";
+                var user = connection.Query<User>(query, new { UserId = userId }).SingleOrDefault();
+                return user;
+            }
+        }
     }
 }

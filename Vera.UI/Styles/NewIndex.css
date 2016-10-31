@@ -19,9 +19,9 @@
     line-height: 40px;
     color: #ECFEEE;
     font-size: 13px;
-    width: 35px;
     text-align: center;
     float: right;
+    margin-left:10px;
 }
 
     .header-login a {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Vera.Interface.BLL;
 using Vera.UI.Constant;
 
 namespace Vera.UI.Shares
@@ -11,20 +12,20 @@ namespace Vera.UI.Shares
     public partial class Header : System.Web.UI.UserControl
     {
         public string HeaderTophtml = "";
+        public IUserRepository userRep { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = string.Empty;
             if (Session[SessionContainer.Login] == null)
             {
-                HeaderTophtml += "<div class=\"header-login\"><a href=\"Register.aspx\">注册</a></div>";
-                HeaderTophtml += "<div class=\"header-login\"><a href=\"Login.aspx\">登录</a></div>";
+                //HeaderTophtml += "<div class=\"header-login\"><a href=\"Register.aspx\">注册</a></div>";
+                HeaderTophtml += "<div class=\"header-login\"><a href=\"/login\">登录</a></div>";
             }
             else
             {
-                username = Session[SessionContainer.Login].ToString();
-                HeaderTophtml += "<div class=\"header-login\">你好，" + username + "</div>";
+                var users = userRep.GetUserByUserId(Convert.ToInt32(Session[SessionContainer.Login]));
                 HeaderTophtml += "<div class=\"header-login\"><a href=\"../LogOut.aspx\">登出</a></div>";
+                HeaderTophtml += "<div class=\"header-login\">你好，" + users.UserName + "</div>";  
             }
         }
     }

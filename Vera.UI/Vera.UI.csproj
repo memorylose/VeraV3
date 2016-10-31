@@ -88,6 +88,7 @@
     <Content Include="Images\search.png" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons\flat-ui-icons-regular.eot" />
     <Content Include="fonts\glyphicons\flat-ui-icons-regular.ttf" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pager\Pager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

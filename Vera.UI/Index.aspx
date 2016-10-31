@@ -7,7 +7,6 @@
 <%@ Register Src="Shares/HotArticles.ascx" TagName="HotArticles" TagPrefix="uc5" %>
 <%@ Register Src="Shares/Footer.ascx" TagName="Footer" TagPrefix="uc6" %>
 <%@ Register Src="Shares/ArticleType.ascx" TagName="ArticleType" TagPrefix="uc7" %>
-<%@ Register Src="Shares/ArticleDate.ascx" TagName="ArticleDate" TagPrefix="uc8" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,10 +50,6 @@
                     <div class="l-personal-detail">
                         <uc7:ArticleType ID="ArticleType1" runat="server" />
                     </div>
-                    <div class="l-personal-name">文章存档</div>
-                    <div class="l-personal-detail">
-                        <uc8:ArticleDate ID="ArticleDate1" runat="server" />
-                    </div>
                     <div class="l-personal-name">阅读排行</div>
                     <div class="l-personal-detail">
                         <uc5:HotArticles ID="HotArticles1" runat="server" />
@@ -64,15 +59,8 @@
                     <div class="l-personal-name" style="margin-left: 20px;">欢迎来到我的生活坊</div>
                     <%=ArticleListhtml %>
                     <div class="r-content-d" style="padding-left: 20px; padding-bottom: 20px; padding-top: 20px;">
-                      <%--       <div class="pager-e">1</div>
-                        <div class="pager-d"><a href="">2</a></div>
-                        <div class="pager-d"><a href="">3</a></div>
-                        <div class="pager-d"><a href="">4</a></div>
-                        <div class="pager-d"><a href="">下一页</a></div>
-                        <div style="clear: both;"></div>--%>
                         <%=strPager %>
                     </div>
-                    <%-- <%=PageDevisionhtml %>--%>
                 </div>
             </div>
         </div>

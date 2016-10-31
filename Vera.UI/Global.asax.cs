@@ -64,6 +64,10 @@ namespace Vera.UI
             routes.MapPageRoute("",
                 "article/{id}",
                 "~/articles.aspx");
+
+            routes.MapPageRoute("",
+                "login",
+                "~/Login.aspx");
         }
     }
 }
