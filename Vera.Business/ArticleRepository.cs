@@ -61,5 +61,29 @@ namespace Vera.Business
         {
             return article.GetArticlesCountWithType(typeId);
         }
+
+        public IEnumerable<ArticleType> GetArticleType()
+        {
+            return article.GetArticleType();
+        }
+
+        public string AddArticleValidation(Articles article)
+        {
+            string errMsg = string.Empty;
+            if (string.IsNullOrEmpty(article.Title))
+            {
+                errMsg = "文章标题不能为空";
+            }
+            else if (string.IsNullOrEmpty(article.Contents))
+            {
+                errMsg = "文章内容不能为空";
+            }
+            return errMsg;
+        }
+
+        public bool AddArticle(Articles model)
+        {
+            return article.AddArticle(model);
+        }
     }
 }

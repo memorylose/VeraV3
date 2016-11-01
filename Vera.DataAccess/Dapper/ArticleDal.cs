@@ -74,7 +74,7 @@ namespace Vera.DataAccess.Dapper
             }
             using (IDbConnection connection = dapperConnection.OpenConnection())
             {
-                string query = "select A.* from (select row_number() over(order by Articles.CreateDate desc) as rownumber, Articles.ArticleId,Articles.Title,Articles.Summary,Articles.Contents,Articles.CreateDate,Articles.TypeId, ArticleType.TypeName, Users.UserName from Articles inner join Users on Articles.CreateUserId = Users.UserId inner join ArticleType on Articles.TypeId = ArticleType.TypeId "+ typeStr + ") as A where A.rownumber between @beginRowNumber and @endRowNumber";
+                string query = "select A.* from (select row_number() over(order by Articles.CreateDate desc) as rownumber, Articles.ArticleId,Articles.Title,Articles.Summary,Articles.Contents,Articles.CreateDate,Articles.TypeId, ArticleType.TypeName, Users.UserName from Articles inner join Users on Articles.CreateUserId = Users.UserId inner join ArticleType on Articles.TypeId = ArticleType.TypeId " + typeStr + ") as A where A.rownumber between @beginRowNumber and @endRowNumber";
                 var articles = connection.Query<Articles>(query, new { beginRowNumber = beginRowNumber, endRowNumber = endRowNumber }).ToList();
                 return articles;
             }
@@ -114,6 +114,29 @@ namespace Vera.DataAccess.Dapper
                 var articles = connection.Query<Articles>(query, new { articleId = articleId }).FirstOrDefault();
                 return articles;
             }
+        }
+
+        public IEnumerable<ArticleType> GetArticleType()
+        {
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                string query = "select TypeId,TypeName from ArticleType ORDER BY TypeId ASC";
+                var types = connection.Query<ArticleType>(query).ToList();
+                return types;
+            }
+        }
+
+        public bool AddArticle(Articles article)
+        {
+            bool result = false;
+            string insertSql = "insert into Articles(Title, Summary, Contents,CreateDate,CreateUserId,TypeId) values (@Title,@Summary,@Contents,@CreateDate,@CreateUserId,@TypeId)";
+
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                if (connection.Execute(insertSql, article) > 0)
+                    result = true;
+            }
+            return result;
         }
     }
 }

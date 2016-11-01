@@ -16,6 +16,7 @@ namespace Vera.UI
         public IArticleRepository articleRep { get; set; }
         public StringBuilder ArticleListhtml = new StringBuilder();
         public string strPager;
+        public string addHtml;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,6 +61,7 @@ namespace Vera.UI
             var articleList = articleRep.GetIndexArticleWithType(startPage, endPage, typeid);
             int userId = 0;
             bool isSign = false;
+
             if (Session[SessionContainer.Login] != null)
             {
                 userId = Convert.ToInt32(Session[SessionContainer.Login]);
@@ -97,12 +99,10 @@ namespace Vera.UI
                 ArticleListhtml.Append("</div>");
             }
 
-
-
-
-
-
-
+            if (isSign)
+            {
+                addHtml = "<div class=\"l-personal-name-r\"><a href=\"/add\">添加新文章</a></div>";
+            }
         }
     }
 }

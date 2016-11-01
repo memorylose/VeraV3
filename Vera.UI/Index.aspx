@@ -56,7 +56,10 @@
                     </div>
                 </div>
                 <div class="col-md-9 r-content">
-                    <div class="l-personal-name" style="margin-left: 20px;">欢迎来到我的生活坊</div>
+                    <div class="l-personal-name" style="margin-left: 20px;">
+                        <div class="l-personal-name-l">欢迎来到我的生活坊</div>
+                        <%=addHtml %>
+                    </div>
                     <%=ArticleListhtml %>
                     <div class="r-content-d" style="padding-left: 20px; padding-bottom: 20px; padding-top: 20px;">
                         <%=strPager %>

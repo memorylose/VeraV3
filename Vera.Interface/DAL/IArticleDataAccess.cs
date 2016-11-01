@@ -18,5 +18,7 @@ namespace Vera.Interface.DAL
         Articles GetArticleDetail(int articleId);
         IEnumerable<Articles> GetIndexArticleWithType(int beginRowNumber, int endRowNumber, int typeId);
         int GetArticlesCountWithType(int typeId);
+        IEnumerable<ArticleType> GetArticleType();
+        bool AddArticle(Articles article);
     }
 }

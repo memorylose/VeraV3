@@ -50,6 +50,10 @@ namespace Vera.UI
                 "~/index.aspx");
 
             routes.MapPageRoute("",
+              "add",
+              "~/addarticle.aspx");
+
+            routes.MapPageRoute("",
                 "home/{pageid}",
                 "~/index.aspx");
 

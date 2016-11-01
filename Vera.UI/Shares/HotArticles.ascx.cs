@@ -22,8 +22,8 @@ namespace Vera.UI.Shares
                 if (title.Length >= 15)
                     title = title.Substring(0, 15) + "...";
                 RankListhtml += "<div class=\"row bt-margin\">";
-                RankListhtml += "<div class=\"l-read-name\"><a href=\"Articles.aspx?id=" + Convert.ToInt32(list.ArticleId) + "\">" + list.Title + "</a></div>";
-                RankListhtml += "<div class=\"l-read-name-d\">(239)</div>";
+                RankListhtml += "<div class=\"l-read-name\"><a href=\"article/" + Convert.ToInt32(list.ArticleId) + "\">" + list.Title + "</a></div>";
+                RankListhtml += "<div class=\"l-read-name-d\"></div>";
                 RankListhtml += "</div>";
             }
         }

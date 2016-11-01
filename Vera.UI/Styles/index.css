@@ -210,9 +210,11 @@
 }
 
 .dp {
-    border: 1px solid #DDDDDD;
+    border: 1px solid red;
     width: 120px;
     height: 30px;
+    margin-top:20px;
+    display:block;
 }
 
 .title-input {

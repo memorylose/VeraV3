@@ -21,7 +21,7 @@
     font-size: 13px;
     text-align: center;
     float: right;
-    margin-left:10px;
+    margin-left: 10px;
 }
 
     .header-login a {
@@ -59,6 +59,24 @@
     font-weight: bold;
     padding-left: 10px;
 }
+
+.l-personal-name-l {
+    float: left;
+}
+
+.l-personal-name-r {
+    float: right;
+    margin-right: 10px;
+}
+
+    .l-personal-name-r a {
+        color: #CC0000;
+        text-decoration: none;
+    }
+
+        .l-personal-name-r a:hover {
+            text-decoration: none;
+        }
 
 .l-personal-content {
     background-color: white;
@@ -351,6 +369,43 @@
             color: #CC0000;
             text-decoration: none;
         }
+
+.adda-div {
+    margin-left: 20px;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.dp {
+    border: 1px solid #DDDDDD;
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.title-input {
+    height: 40px;
+    width: 90%;
+    border: 1px solid #DDDDDD;
+    padding-left: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.create-btn {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    margin-top: 20px;
+}
+
+.reg_err {
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
 
 .test {
     border: 1px solid red;
