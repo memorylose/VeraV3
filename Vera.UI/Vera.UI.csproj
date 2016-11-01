@@ -303,6 +303,7 @@
     <Compile Include="Base\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Constant\RedirectUrl.cs" />
     <Compile Include="Constant\SessionContainer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

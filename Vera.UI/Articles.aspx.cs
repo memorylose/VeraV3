@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Vera.Interface.BLL;
+using Vera.UI.Constant;
+using Vera.Utility;
 
 namespace Vera.UI
 {
@@ -19,23 +21,30 @@ namespace Vera.UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Page.RouteData.Values["id"] != null)
+            if (Page.RouteData.Values["id"] != null && RegexOperator.ValidationQueryString(Page.RouteData.Values["id"]))
             {
                 GetArticleDetail(Convert.ToInt32(Page.RouteData.Values["id"]));
             }
             else
             {
-                Response.Redirect("Home");
+                Response.Redirect(RedirectUrl.Home);
             }
         }
 
         private void GetArticleDetail(int articleId)
         {
             var articleDetail = articleRep.GetArticleDetail(articleId);
-            Title = articleDetail.Title;
-            CrDate = articleDetail.CreateDate.ToString(); ;
-            TypeName = articleDetail.TypeName;
-            Contents = articleDetail.Contents;
+            if (articleDetail != null)
+            {
+                Title = articleDetail.Title;
+                CrDate = articleDetail.CreateDate.ToString(); ;
+                TypeName = articleDetail.TypeName;
+                Contents = articleDetail.Contents;
+            }
+            else
+            {
+                Response.Redirect(RedirectUrl.Home);
+            }
         }
     }
 }

@@ -23,17 +23,17 @@ namespace Vera.UI
             int curPage = 0;
             int typeid = 0;
 
-            if (Page.RouteData.Values["pageid"] != null)
+            if (Page.RouteData.Values["pageid"] != null && RegexOperator.ValidationIndexQUeryString(Page.RouteData.Values["pageid"]))
             {
                 curPage = Convert.ToInt32(Page.RouteData.Values["pageid"]);
             }
 
-            if (Page.RouteData.Values["typeid"] != null)
+            if (Page.RouteData.Values["typeid"] != null && RegexOperator.ValidationIndexQUeryString(Page.RouteData.Values["typeid"]))
             {
                 typeid = Convert.ToInt32(Page.RouteData.Values["typeid"]);
             }
 
-            if (Page.RouteData.Values["curTypePage"] != null)
+            if (Page.RouteData.Values["curTypePage"] != null && RegexOperator.ValidationIndexQUeryString(Page.RouteData.Values["curTypePage"]))
             {
                 curPage = Convert.ToInt32(Page.RouteData.Values["curTypePage"]);
             }
