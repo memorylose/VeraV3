@@ -61,5 +61,28 @@ namespace Vera.DataAccess.Dapper
                 return user;
             }
         }
+
+        public int CreateUser(User model)
+        {
+            int userId = 0;
+            string userSql = "INSERT INTO Users(UserName,Password,Email,CreateDate,UpdateDate) VALUES(@UserName,@Password,@Email,@CreateDate,@UpdateDate);SELECT CAST(SCOPE_IDENTITY() as int)";
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                userId = connection.Query<int>(userSql, new { UserName = model.UserName, Password = EncryptUtil.CreateSHA256HashString(model.Password), Email = model.Email, CreateDate = model.CreateDate, UpdateDate = model.UpdateDate }).Single();
+            }
+            return userId;
+        }
+
+        public bool CreateUserInformation(UserInformation model)
+        {
+            bool result = false;
+            string userSql = "INSERT INTO UserInformation(UserId,NickName,Gender,Profession,Major,Signature) VALUES(@UserId,@NickName,@Gender,@Profession,@Major,@Signature)";
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                if (connection.Execute(userSql, model) > 0)
+                    result = true;
+            }
+            return result;
+        }
     }
 }

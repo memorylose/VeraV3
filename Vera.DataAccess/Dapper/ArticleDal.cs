@@ -4,6 +4,7 @@ using System.Linq;
 using Vera.Model;
 using Dapper;
 using Vera.Interface.DAL;
+using Vera.Utility;
 
 namespace Vera.DataAccess.Dapper
 {
@@ -135,6 +136,18 @@ namespace Vera.DataAccess.Dapper
             {
                 if (connection.Execute(insertSql, article) > 0)
                     result = true;
+            }
+
+            return result;
+        }
+
+        public int AddArticleWithIdentity(Articles article)
+        {
+            int result = 0;
+            string insertSql = @"insert into Articles(Title, Summary, Contents,CreateDate,CreateUserId,TypeId) values (@Title,@Summary,@Contents,@CreateDate,@CreateUserId,@TypeId);SELECT CAST(SCOPE_IDENTITY() as int)";
+            using (IDbConnection connection = dapperConnection.OpenConnection())
+            {
+                result = connection.Query<int>(insertSql, new { Title = article.Title, Summary = article.Summary, Contents = article.Contents, CreateDate = article.CreateDate, CreateUserId = article.CreateUserId, TypeId = article.TypeId }).Single();
             }
             return result;
         }

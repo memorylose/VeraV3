@@ -13,5 +13,7 @@ namespace Vera.Interface.DAL
         int GetUserIdByUserName(string userName);
         UserInformation GetUserInfoByUserId(int userId);
         User GetUserByUserId(int userId);
+        int CreateUser(User model);
+        bool CreateUserInformation(UserInformation model);
     }
 }

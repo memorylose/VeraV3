@@ -45,5 +45,15 @@ namespace Vera.Business
         {
             return users.GetUserByUserId(userId);
         }
+
+        public int CreateUser(User model)
+        {
+            return users.CreateUser(model);
+        }
+
+        public bool CreateUserInformation(UserInformation model)
+        {
+            return users.CreateUserInformation(model);
+        }
     }
 }
