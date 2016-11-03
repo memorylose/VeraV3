@@ -30,7 +30,7 @@ namespace Vera.UI
                 {
                     int userId = this.userRep.GetUserIdByUserName(user.UserName);
                     Session[SessionContainer.Login] = userId.ToString();
-                    Response.Redirect("/home");
+                    Response.Redirect(RedirectUrl.Home);
                 }
                 else
                 {

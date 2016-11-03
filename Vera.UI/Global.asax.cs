@@ -72,6 +72,10 @@ namespace Vera.UI
             routes.MapPageRoute("",
                 "login",
                 "~/Login.aspx");
+
+            routes.MapPageRoute("",
+                "register",
+                "~/register.aspx");
         }
     }
 }

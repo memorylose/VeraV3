@@ -38,7 +38,7 @@ namespace Vera.UI
             {
                 if (articleRep.AddArticle(model))
                 {
-                    Response.Redirect("/home");
+                    Response.Redirect(RedirectUrl.Home);
                 }
                 else
                 {

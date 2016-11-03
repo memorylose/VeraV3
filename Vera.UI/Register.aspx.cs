@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Vera.Interface.BLL;
 using Vera.Model;
+using Vera.UI.Constant;
 
 namespace Vera.UI
 {
@@ -15,7 +17,11 @@ namespace Vera.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int isRegister = ConfigurationManager.AppSettings["IsRegister"] == null ? 0 : Convert.ToInt32(ConfigurationManager.AppSettings["IsRegister"]);
+            if (isRegister == 0)
+            {
+                Response.Redirect(RedirectUrl.Home);
+            }
         }
 
         protected void Button1_Click1(object sender, EventArgs e)
