@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vera.Utility", "Vera.Utilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vera.Model", "Vera.Model\Vera.Model.csproj", "{3B7F6606-9EE7-4D1D-90C0-62D8DB3F0379}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vera.Test", "Vera.Test\Vera.Test.csproj", "{C1638A49-D9F7-47EE-9A9F-D020CBC237BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3B7F6606-9EE7-4D1D-90C0-62D8DB3F0379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B7F6606-9EE7-4D1D-90C0-62D8DB3F0379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B7F6606-9EE7-4D1D-90C0-62D8DB3F0379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1638A49-D9F7-47EE-9A9F-D020CBC237BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1638A49-D9F7-47EE-9A9F-D020CBC237BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1638A49-D9F7-47EE-9A9F-D020CBC237BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1638A49-D9F7-47EE-9A9F-D020CBC237BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
