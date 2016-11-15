@@ -50,7 +50,27 @@ namespace Vera.Test
         [TestMethod]
         public void ValidateLoginFailed()
         {
+            User userModel = new User() { UserName = "Test", Password = "Test" };
+            userMocker.Setup(m => m.Login(userModel)).Returns(false);
 
+            userRep = new UserRepository(userMocker.Object);
+
+            bool result = userRep.Login(userModel);
+
+            Assert.AreEqual(result, false);
+        }
+
+        [TestMethod]
+        public void ValidateLoginSuccessful()
+        {
+            User userModel = new User() { UserName = "Test", Password = "Test" };
+            userMocker.Setup(m => m.Login(userModel)).Returns(true);
+
+            userRep = new UserRepository(userMocker.Object);
+
+            bool result = userRep.Login(userModel);
+
+            Assert.AreEqual(result, true);
         }
     }
 }
